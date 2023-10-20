@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>St. Hector's Veterinary Clinic</title>
+
+  <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
   <h1>St. Hector's Veterinary Clinic</h1>
   <hr>
   <h2>Search for the owner:</h2>
-  <form action="/search" method="get">
+  <form class="search_owner" action="/search" method="get">
     <input type="text" name="search">
     <button>Search</button>
   </form>
