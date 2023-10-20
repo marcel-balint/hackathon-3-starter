@@ -7,7 +7,7 @@
     <title>Create Owner</title>
 </head>
 <body>
-
+    @include('components.header')
     @include('components.messages')
     
     @if ($owner->id)
@@ -38,7 +38,9 @@
             <input name="address" value="{{ old('address', $owner->address) }}"/>
 
             <button>Save</button>
-            <button><a href="">Add Pet</a></button>
+            <button><a href="{{ route('animal.form') }}">Add Pet</a></button>
         </form>
+
+
 </body>
 </html>

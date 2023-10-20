@@ -41,7 +41,7 @@
     <thead>
       <tr>
         
-        <th> Owner </th>
+        <th> Owner name </th>
         <th> Name </th>
         <th> Species </th>
         <th> Breed </th>

@@ -7,10 +7,13 @@
     <title>Animal Detail</title>
 </head>
 <body>
+    @include('components.header')
     <h2>Animal detail</h2>
-<div class="image" >
-    <img width="150px" height="150px" src="/images/pets/{{ $image }}" alt="Image">
-</div>
+    @if($image)
+        <div class="image" >
+            <img width="150px" height="150px" src="/images/pets/{{ $image }}" alt="Image">
+        </div>
+    @endif
     <table>
         <tr>
             <th>Name</th>

@@ -7,7 +7,7 @@
     <title>Edit</title>
 </head>
 <body>
-    
+    @include('components.header')
     @if ($animal->id)
     <a href="/">< back home</a>
     <h2>Edit</h2>
@@ -17,7 +17,9 @@
     <a href="/">< back home</a>
     <h2>Create</h2>
     <form action="{{ route('animal.store') }}" method="post">
+        <input type="hidden" value="{{ $animal->owner_id }}">
     @endif
+
         @csrf
     <label for="name">Name</label>
     <br>

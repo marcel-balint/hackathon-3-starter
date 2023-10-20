@@ -7,8 +7,7 @@
   <title>St. Hector's Veterinary Clinic</title>
 </head>
 <body>
-  <h1>St. Hector's Veterinary Clinic</h1>
-  <hr>
+  @include('components.header')
   <h2>Search results for pets:</h2>
 
 
@@ -36,6 +35,7 @@
       <td>{{$pet->breed}} </td>
       <td>{{$pet->age}} </td>
       <td>{{$pet->weight}} </td>
+      {{-- here put the pet id to the url link --}}
       <td><a href="">Detail</a></td>
     </tr>
         
