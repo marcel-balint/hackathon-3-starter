@@ -27,15 +27,15 @@ Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 Route::get('searchpet', [IndexController::class, 'searchpet'])->name('searchpet');
-Route::get('/', function () {
-  return view('welcome');
-});
+
 
 Route::get('/animal/detail/{animal_id}', [AnimalController::class, 'animalDetail'])->name('animal.detail');
 // Edit
 Route::get('/animal/edit/{animal_id}', [EditAnimalController::class, 'animalEdit'])->name('animal.edit');
 // Update
 Route::put('/animal/{animal}', [EditAnimalController::class, 'updateAnimal'])->whereNumber('animal')->name('animal.update');
+
+
 
 Route::get('/owner/create', [OwnerController::class, 'create'])->name('owner.create');
 Route::post('/owner', [OwnerController::class, 'store'])->name('owner.store');
