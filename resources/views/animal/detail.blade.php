@@ -7,6 +7,7 @@
     <title>Animal Detail</title>
 </head>
 <body>
+    @include('components.header')
     <h2>Animal detail</h2>
     @if($image)
         <div class="image" >

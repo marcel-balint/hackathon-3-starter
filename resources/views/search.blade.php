@@ -7,8 +7,7 @@
   <title>St. Hector's Veterinary Clinic</title>
 </head>
 <body>
-  <h1>St. Hector's Veterinary Clinic</h1>
-  <hr>
+  @include('components.header')
   <h2>Search results for owners:</h2>
 
   <table>
@@ -35,8 +34,8 @@
       <td>{{$owner->adress}} </td>
     {{-- here put the pet id to the url link --}}
       <td><a href="{{ route('owner.edit', $owner->id) }}">Edit</a></td>
-    {{-- here must to see animals of the pets --}}
-      <td> <a href="">Detail</a></td>
+    
+      
     </tr>
         
     @endforeach

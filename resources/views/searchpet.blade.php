@@ -7,8 +7,7 @@
   <title>St. Hector's Veterinary Clinic</title>
 </head>
 <body>
-  <h1>St. Hector's Veterinary Clinic</h1>
-  <hr>
+  @include('components.header')
   <h2>Search results for pets:</h2>
 
 

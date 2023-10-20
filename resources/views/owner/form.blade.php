@@ -7,7 +7,7 @@
     <title>Create Owner</title>
 </head>
 <body>
-
+    @include('components.header')
     @include('components.messages')
     
     @if ($owner->id)
