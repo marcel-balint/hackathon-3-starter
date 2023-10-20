@@ -15,7 +15,7 @@ return new class extends Migration
       $table->id();
       $table->foreignId('image_id')->nullable();
       $table->foreignId('owner_id')->nullable();
-      $table->string('string')->nullable();
+      $table->string('name')->nullable();
       $table->string('species')->nullable();
       $table->string('breed')->nullable();
       $table->integer('age')->nullable();
