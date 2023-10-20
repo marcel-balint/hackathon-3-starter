@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\EditAnimalController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/animal/detail/{animal_id}', [AnimalController::class, 'animalDetail'])->name('animal.detail');
+// Edit
+Route::get('/animal/edit/{animal_id}', [EditAnimalController::class, 'animalEdit'])->name('animal.edit');
+// Update
+Route::put('/animal/{animal}', [EditAnimalController::class, 'updateAnimal'])->whereNumber('animal')->name('animal.update');
