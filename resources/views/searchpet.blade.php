@@ -36,6 +36,7 @@
       <td>{{$pet->breed}} </td>
       <td>{{$pet->age}} </td>
       <td>{{$pet->weight}} </td>
+      {{-- here put the pet id to the url link --}}
       <td><a href="">Detail</a></td>
     </tr>
         
