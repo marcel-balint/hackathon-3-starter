@@ -17,7 +17,9 @@
     <a href="/">< back home</a>
     <h2>Create</h2>
     <form action="{{ route('animal.store') }}" method="post">
+        <input type="hidden" value="{{ $owner->id }}">
     @endif
+
         @csrf
     <label for="name">Name</label>
     <br>
