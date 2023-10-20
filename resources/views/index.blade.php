@@ -36,6 +36,9 @@
     <br>
 
     {{-- Here will be an alphabetically sorted list of pets and their owners --}}
+    <a href="">A</a>
+    <a href="">B</a>
+    <a href="">C</a>
     <h3>List of aminals:</h3>
   <table>
     <thead>
@@ -73,5 +76,8 @@
   
     
 
+  <footer>
+    <img class="img" src="/img/IMG_20231020_160224.jpg" alt="">
+  </footer>
 </body>
 </html>
