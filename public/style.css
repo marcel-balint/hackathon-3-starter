@@ -28,3 +28,11 @@ td {
 .img {
   width: 200px;
 }
+
+.alert-success {
+  color: green;
+}
+
+.alert-danger {
+  color: red;
+}

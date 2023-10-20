@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>St. Hector's Veterinary Clinic</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   @include('components.header')
@@ -36,7 +37,7 @@
       <td>{{$pet->age}} </td>
       <td>{{$pet->weight}} </td>
       {{-- here put the pet id to the url link --}}
-      <td><a href="">Detail</a></td>
+      <td><a href="{{ route('animal.detail', $pet->id) }}">Detail</a></td>
     </tr>
         
     @endforeach
