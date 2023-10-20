@@ -12,8 +12,29 @@ class AnimalController extends Controller
 
     {
         $animal = Animal::findOrFail($id);
-        $image = $animal->image->path;
-        // dd($image);
+        $image = null;
+        if ($animal->image) {
+            $image = $animal->image->path;
+        }
         return view('animal.detail', compact('animal', 'image'));
+    }
+    public function create()
+    {
+        // Prepare empty object
+        $animal = new Animal();
+        return view('animal.form', compact('animal'));
+    }
+    public function store(Request $request)
+    {
+
+        $animal = new Animal();
+        $animal->name = $request->input('name');
+        $animal->species = $request->input('species');
+        $animal->breed = $request->input('breed');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
+        $animal->save();
+        session()->flash('success_message', 'Successfully Updated!');
+        return redirect()->route('animal.detail', $animal->id);
     }
 }
