@@ -10,13 +10,13 @@ class EditAnimalController extends Controller
   public function animalEdit(Request $request, string $id)
   {
     $animal = Animal::findOrFail($id);
-    // dd($movie);
 
     return view('animal.form', compact('animal'));
   }
 
   public function updateAnimal(Request $request, string $id)
   {
+    $this->validateInput($request);
     $animal = Animal::findOrFail($id); // Find the animal first to update it
     $animal->name = $request->input('name');
     $animal->species = $request->input('species');
@@ -34,15 +34,11 @@ class EditAnimalController extends Controller
     $this->validate(
       $request,
       [
-        'name' => 'required|min:2',
-        'year' => 'required|numeric',
+        'name' => 'required',
         'species' => 'required',
+        'breed' => 'required',
         'age' => 'required',
         'weight' => 'required'
-
-      ],
-      [
-        'name.required' => 'Please be so kind and fill-in the name of the movie :)'
       ]
     );
   }
