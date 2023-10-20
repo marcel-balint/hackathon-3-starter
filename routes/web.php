@@ -28,11 +28,17 @@ Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 Route::get('searchpet', [IndexController::class, 'searchpet'])->name('searchpet');
 
+// Create owner
+Route::get('/animal/create', [AnimalController::class, 'create'])->name('animal.form');
+// Store owner
+Route::post('/animal', [AnimalController::class, 'store'])->name('animal.store');
+
+
 
 Route::get('/animal/detail/{animal_id}', [AnimalController::class, 'animalDetail'])->name('animal.detail');
-// Edit
+// Edit animal
 Route::get('/animal/edit/{animal_id}', [EditAnimalController::class, 'animalEdit'])->name('animal.edit');
-// Update
+// Update animal
 Route::put('/animal/{animal}', [EditAnimalController::class, 'updateAnimal'])->whereNumber('animal')->name('animal.update');
 
 Route::get('/owner/create', [OwnerController::class, 'create'])->name('owner.create');

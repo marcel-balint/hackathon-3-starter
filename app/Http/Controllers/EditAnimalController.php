@@ -17,8 +17,6 @@ class EditAnimalController extends Controller
 
   public function updateAnimal(Request $request, string $id)
   {
-    //Validation
-    // $this->validateInput($request);
     $animal = Animal::findOrFail($id); // Find the animal first to update it
     $animal->name = $request->input('name');
     $animal->species = $request->input('species');
