@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Animal;
 use App\Models\Owner;
+use Dotenv\Validator;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -19,33 +20,38 @@ class IndexController extends Controller
     return view('index', compact('pets'));
   }
 
-
-
-
-  public function search()
+  public function search(Request $request)
   {
-    $getSearch = $_GET['search'] ?? null;
+    // Validation
+    $request->validate([
+      'search_owner' => 'required|min:1',
+    ]);
 
+    $getSearch = $request->input('search_owner');
     if ($getSearch) {
       $result = Owner::query()
         ->where('surname', 'like', '%' . $getSearch . '%')
         ->orderBy('surname', 'asc')
         ->get();
     }
-    return view('search', compact('result'));
+    return view('search', compact('result', 'getSearch'));
   }
 
 
-  public function searchPet()
+  public function searchPet(Request $request)
   {
-    $getSearch = $_GET['search'] ?? null;
+    // Validation
+    $request->validate([
+      'search' => 'required|min:1',
+    ]);
 
+    $getSearch = $request->input('search');
     if ($getSearch) {
       $result = Animal::query()
         ->where('name', 'like', '%' . $getSearch . '%')
         ->orderBy('name', 'asc')
         ->get();
     }
-    return view('searchpet', compact('result'));
+    return view('searchpet', compact('result', 'getSearch'));
   }
 }

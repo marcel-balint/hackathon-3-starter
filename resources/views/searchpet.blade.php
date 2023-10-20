@@ -9,9 +9,9 @@
 </head>
 <body>
   @include('components.header')
-  <h2>Search results for pets:</h2>
-
-
+  <a href="/">< back home</a>
+  <h2>Search results for pets:</h2> 
+  @if(count($result) > 0)
   <table>
     <thead>
       <tr>
@@ -26,24 +26,24 @@
       </tr>
     </thead>
     <tbody>
-  
-    @foreach ($result as $pet)
-    <tr>
-      <td>{{$pet->id}} </td>
-      <td>{{$pet->owner['surname']}}</td>
-      <td>{{$pet->name}} </td>
-      <td>{{$pet->species}} </td>
-      <td>{{$pet->breed}} </td>
-      <td>{{$pet->age}} </td>
-      <td>{{$pet->weight}} </td>
-      {{-- here put the pet id to the url link --}}
-      <td><a href="{{ route('animal.detail', $pet->id) }}">Detail</a></td>
-    </tr>
-        
-    @endforeach
-    </tbody>
-
+ 
+      @foreach ($result as $pet)
+      <tr>
+        <td>{{$pet->id}} </td>
+        <td>{{$pet->owner['surname']}}</td>
+        <td>{{$pet->name}} </td>
+        <td>{{$pet->species}} </td>
+        <td>{{$pet->breed}} </td>
+        <td>{{$pet->age}} </td>
+        <td>{{$pet->weight}} </td>
+        {{-- here put the pet id to the url link --}}
+        <td><a href="{{ route('animal.detail', $pet->id) }}">Detail</a></td>
+      </tr>
+      @endforeach
+    </tbody>  
   </table>
-  
+  @else
+  <p>No results found for: <strong><i>{{ $getSearch }}</i></strong></p>
+  @endif
 </body>
 </html>

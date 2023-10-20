@@ -9,8 +9,9 @@
 </head>
 <body>
   @include('components.header')
+  <a href="/">< back home</a>
   <h2>Search results for owners:</h2>
-
+  @if(count($result) > 0)
   <table>
     <thead>
       <tr>
@@ -43,6 +44,8 @@
     </tbody>
 
   </table>
-  
+  @else
+  <p>No results found for: <strong><i>{{ $getSearch }}</i></strong></p>
+  @endif
 </body>
 </html>

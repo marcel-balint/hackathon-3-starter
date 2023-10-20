@@ -20,23 +20,36 @@
             @csrf
             <label>First Name:</label>
             <br>
-            <input name="first_name" value="{{ old('name', $owner->first_name) }}"/>
+            <input name="first_name" class="{{ $errors->has('first_name') ? 'error-active' : '' }}" value="{{ old('first_name', $owner->first_name) }}"/>
+            <p class="err-msg-para" style="display: {{ $errors->has('first_name') ? 'block' : 'none' }}">{{ $errors->first('first_name') }}</p>
+
             <br>
             <label>Surname:</label>
             <br>
-            <input name="surname" value="{{ old('name', $owner->surname) }}"/>
+            <input name="surname" class="{{ $errors->has('surname') ? 'error-active' : '' }}" value="{{ old('surname', $owner->surname) }}"/>
+            <p class="err-msg-para" style="display: {{ $errors->has('surname') ? 'block' : 'none' }}">{{ $errors->first('surname') }}</p>
+
             <br>
             <label>Email:</label>
             <br>
-            <input name="email" value="{{ old('email', $owner->email) }}"/>
+            <input name="email" class="{{ $errors->has('email') ? 'error-active' : '' }}" value="{{ old('email', $owner->email) }}"/>
+            <p class="err-msg-para" style="display: {{ $errors->has('email') ? 'block' : 'none' }}">{{ $errors->first('email') }}</p>
+
             <br>
             <label>Phone Number:</label>
             <br>
-            <input name="phone" value="{{ old('phone', $owner->phone) }}"/>
+            <input name="phone" class="{{ $errors->has('phone') ? 'error-active' : '' }}" value="{{ old('phone', $owner->phone) }}"/>
+            <p class="err-msg-para" style="display: {{ $errors->has('phone') ? 'block' : 'none' }}">{{ $errors->first('phone') }}</p>
+
+            
             <br>
             <label>Address:</label>
             <br>
-            <input name="address" value="{{ old('address', $owner->address) }}"/><br><br>
+            <input name="address" class="{{ $errors->has('address') ? 'error-active' : '' }}" value="{{ old('address', $owner->address) }}"/>
+            <p class="err-msg-para" style="display: {{ $errors->has('address') ? 'block' : 'none' }}">{{ $errors->first('address') }}</p>
+
+            <br><br>
+            
 
             <button>Save</button>
             <button><a href="{{ route('animal.form') }}">Add Pet</a></button>

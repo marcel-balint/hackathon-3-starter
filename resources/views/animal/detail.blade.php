@@ -9,6 +9,7 @@
 </head>
 <body>
     @include('components.header')
+    <a href="/">< back home</a>
     <h2>Animal detail</h2>
     @if($image)
         <div class="image" >

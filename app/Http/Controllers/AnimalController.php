@@ -26,7 +26,7 @@ class AnimalController extends Controller
     }
     public function store(Request $request)
     {
-
+        $this->validateInput($request);
         $animal = new Animal();
         $animal->name = $request->input('name');
         $animal->species = $request->input('species');
@@ -36,5 +36,20 @@ class AnimalController extends Controller
         $animal->save();
         session()->flash('success_message', 'Successfully Updated!');
         return redirect()->route('animal.detail', $animal->id);
+    }
+
+    // Validation
+    private function validateInput($request)
+    {
+        $this->validate(
+            $request,
+            [
+                'name' => 'required',
+                'species' => 'required',
+                'breed' => 'required',
+                'age' => 'required|numeric',
+                'weight' => 'required|numeric'
+            ]
+        );
     }
 }

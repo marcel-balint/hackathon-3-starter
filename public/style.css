@@ -36,3 +36,16 @@ td {
 .alert-danger {
   color: red;
 }
+
+.error-active{
+  outline: none;
+  border: 2px solid red;
+}
+.err-msg-para{
+  margin-top: 4px;
+  margin-bottom: -10px;
+  color: red;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: small;
+}

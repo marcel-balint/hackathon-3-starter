@@ -37,8 +37,8 @@ class EditAnimalController extends Controller
         'name' => 'required',
         'species' => 'required',
         'breed' => 'required',
-        'age' => 'required',
-        'weight' => 'required'
+        'age' => 'required|numeric',
+        'weight' => 'required|numeric'
       ]
     );
   }

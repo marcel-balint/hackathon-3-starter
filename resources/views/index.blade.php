@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>St. Hector's Veterinary Clinic</title>
-
   <link rel="stylesheet" href="/style.css">
-
 </head>
 <body>
   <h1>St. Hector's Veterinary Clinic</h1>
   <hr>
   <h2>Search for the owner:</h2>
   <form class="search_owner" action="/search" method="get">
-    <input type="text" name="search">
+    <input type="text" class="{{ $errors->has('search_owner') ? 'error-active' : ''}} " name="search_owner">
     <button>Search</button>
+    <p class="err-msg-para" style="display: {{ $errors->has('search_owner') ? 'block' : 'none' }}">{{ $errors->first('search_owner') }}</p>
+
   </form>
-  
+
   {{-- adding search for pet --}}
     <h2>Search for the pet:</h2>
    <form action="/searchpet" method="get">
-        <input type="text" name="search">
+        <input type="text" class="{{ $errors->has('search') ? 'error-active' : '' }}" name="search">
         <button>Search</button>
+        <p class="err-msg-para" style="display: {{ $errors->has('search') ? 'block' : 'none' }}">{{ $errors->first('search') }}</p>
     </form>
-
     <br>
     <br>
     <br>
@@ -43,7 +43,6 @@
   <table>
     <thead>
       <tr>
-        
         <th> Owner name </th>
         <th> Name </th>
         <th> Species </th>
@@ -56,7 +55,7 @@
     <tbody>
     @foreach ($pets as $pet)
         <tr>
-      
+    
       <td>{{$pet->owner['surname']}}</td>
       <td>{{$pet->name}} </td>
       <td>{{$pet->species}} </td>

@@ -25,8 +25,6 @@ class OwnerController extends Controller
         return view('owner.form', compact(
             'owner'
         ));
-
-        
     }
 
     /**
@@ -103,10 +101,10 @@ class OwnerController extends Controller
         $this->validate($request, [
             'first_name' => 'required|min:3',
             'surname' => 'required|min:3',
-            'email' => 'required',
-            'phone' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
             'address' => 'required'
-        ],[
+        ], [
             'first_name.required' => 'Write down your first name',
             'surname.required' => 'Write down your surname',
             'email.required' => 'Write down your email',
