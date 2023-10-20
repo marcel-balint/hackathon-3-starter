@@ -38,7 +38,7 @@
             <input name="address" value="{{ old('address', $owner->address) }}"/>
 
             <button>Save</button>
-            <button><a href="url">Add Pet</a></button>
+            <button><a href="{{ route('animal.edit')}}">Add Pet</a></button>
         </form>
 </body>
 </html>
