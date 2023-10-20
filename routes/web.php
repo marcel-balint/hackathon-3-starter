@@ -27,9 +27,7 @@ Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/search', [IndexController::class, 'search'])->name('search');
 
 Route::get('searchpet', [IndexController::class, 'searchpet'])->name('searchpet');
-Route::get('/', function () {
-  return view('welcome');
-});
+
 
 Route::get('/animal/detail/{animal_id}', [AnimalController::class, 'animalDetail'])->name('animal.detail');
 // Edit

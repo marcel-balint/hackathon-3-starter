@@ -34,7 +34,7 @@
       <td>{{$owner->phone}} </td>
       <td>{{$owner->adress}} </td>
     {{-- here put the pet id to the url link --}}
-      <td><a href="">Detail</a></td>
+      <td><a href="{{ route('owner.edit', $owner->id) }}">Detail</a></td>
     </tr>
         
     @endforeach

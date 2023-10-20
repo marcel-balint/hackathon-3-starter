@@ -26,7 +26,7 @@
     <br>
     <br>
 
-    <a href="">Create new owner</a><br>
+    <a href="{{ route('owner.create')}}">Create new owner</a><br>
 
     <br>
     <br>
@@ -58,7 +58,7 @@
       <td>{{$pet->age}} </td>
       <td>{{$pet->weight}} </td>
       {{-- here put the pet id to the url link --}}
-      <td><a href="">Detail</a></td>
+      <td><a href="{{ route('animal.detail', $pet->id) }}">Detail</a></td>
     </tr>
         
     @endforeach
