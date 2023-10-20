@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>St. Hector's Veterinary Clinic</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <h1>St. Hector's Veterinary Clinic</h1>
-  <hr>
+  @include('components.header')
   <h2>Search results for pets:</h2>
 
 
@@ -36,7 +36,8 @@
       <td>{{$pet->breed}} </td>
       <td>{{$pet->age}} </td>
       <td>{{$pet->weight}} </td>
-      <td><a href="">Detail</a></td>
+      {{-- here put the pet id to the url link --}}
+      <td><a href="{{ route('animal.detail', $pet->id) }}">Detail</a></td>
     </tr>
         
     @endforeach

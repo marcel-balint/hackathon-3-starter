@@ -37,6 +37,8 @@ Route::get('/animal/edit/{animal_id}', [EditAnimalController::class, 'animalEdit
 
 Route::put('/animal/{animal}', [EditAnimalController::class, 'updateAnimal'])->whereNumber('animal')->name('animal.update');
 
+
+
 Route::get('/owner/create', [OwnerController::class, 'create'])->name('owner.create');
 Route::post('/owner', [OwnerController::class, 'store'])->name('owner.store');
 

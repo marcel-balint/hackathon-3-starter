@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit</title>
-    <link rel="stylesheet" href="/form.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
+    @include('components.header')
     @if ($animal->id)
     <a href="/">< back home</a>
     <h2>Edit</h2>
@@ -18,7 +18,7 @@
     <a href="/">< back home</a>
     <h2>Create</h2>
     <form action="{{ route('animal.store') }}" method="post">
-        <input type="hidden" value="{{ $owner->id }}">
+        <input type="hidden" value="{{ $animal->owner_id }}">
     @endif
 
         @csrf
